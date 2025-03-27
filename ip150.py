@@ -1,4 +1,4 @@
-import functools
+eimport functools
 import hashlib
 import json
 import logging
@@ -193,7 +193,7 @@ class Paradox_IP150:
         while result == None and retries > 0:
             try:
                 result = requests.get(url, params=params, **kwargs)
-            except requests.Timeout as t:
+            except Exceptions as t:
                 retries = retries-1
                 logging.debug('GET request timed out. {} attempts left: {}'.format(retries, t))
         if retries == 0:
